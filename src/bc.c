@@ -36,6 +36,7 @@ u16 color = RED;           // initial color for putc()
 
 #define  BOOTSEG 0x9000
 
+// #include "bio.c" <========= WRITE YOUR OWN io.c file !!!!
 
 char mbr[512];
 char ans[64];
@@ -48,7 +49,7 @@ int getSector(u32 sector, char *addr)
   diskr();    // call int13-43 in assembly
 }
 
-int main(int argc, char *argv[])
+int main()
 {
   int i;
   struct partition *p;
@@ -65,9 +66,12 @@ int main(int argc, char *argv[])
   dp->s2 = 0;             // high 4-byte address s2=0
 
   getSector((u32)0, (u16)mbr); // get MBR
+  //==========================================================
+  //In the MBR, partition table begins at byte offset 0x1BE
+  // DO #1:  WRITE C CODE TO PRINT THE PARTITIONS
+  //==========================================================
   color = CYAN;
-
-  while(0){
+  while(1){
     printf("what's your name? ");
     gets(ans);
     if (strcmp(ans, "quit")==0){
