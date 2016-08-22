@@ -71,6 +71,7 @@ int main()
   // DO #1:  WRITE C CODE TO PRINT THE PARTITIONS
   //==========================================================
   color = CYAN;
+  prints("ho");
   while(1){
     printf("what's your name? ");
     gets(ans);
