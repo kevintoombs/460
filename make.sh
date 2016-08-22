@@ -1,5 +1,3 @@
-mkdir build
-mkdir dist
 as86 -o build/bs.o  src/bs.s
 bcc -c -ansi -o build/bc.o src/bc.c
 bcc -c -ansi -o build/bio.o src/bio.c
