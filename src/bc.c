@@ -2,6 +2,8 @@ typedef unsigned char  u8;
 typedef unsigned short u16;
 typedef unsigned long  u32;
 
+#include "bio.c"
+
 #define  GREEN  10         // color byte for putc()
 #define  CYAN   11
 #define  RED    12
